@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Hello world!
@@ -79,6 +81,47 @@ public class App {
         // Task 3 - Stwórz dwie HashMapy<String, Integer> (jak w liście zakupów)
         //i zaimplementuj ich sumowanie. Np jedna mapa to Jajka: 3; Mleko: 1,
         // a druga to Jajka: 2; Kiełbasa: 2, wynik to Jajka: 5; Mleko: 1; Kiełbasa: 2
+        Map<String, Integer> groceries1 = new HashMap<>();
+        Map<String, Integer> groceries2 = new HashMap<>();
+        groceries1.put("Jajka",3);
+        groceries1.put("Mleko",1);
+        groceries2.put("Jajka",2);
+        groceries2.put("Kiełbasa",2);
+        Map<String, Integer> groceries = new HashMap<>();
 
+// Iterate over keys
+        for (String key : groceries1.keySet()) {
+            System.out.println(key);
+            for (String key1 : groceries2.keySet()){
+                if(key == key1){
+                    int quantity1 = groceries1.get(key);
+                    int quantity2 = groceries2.get(key1);
+                        groceries.put(key, quantity1 + quantity2);
+                    System.out.println(key+" "+ quantity2);}
+                else {
+                        groceries.put(key, 1);
+                    }
+
+                }
+            }
+        System.out.println(groceries);
+
+      //  if (groceries2.containsKey(groceries1)){
+       //     groceries.put(product, 1);
+
+     //   }
+
+//            if (shoppingList.containsKey(product)) {
+//                int quantity = shoppingList.get(product);
+//                shoppingList.put(product, quantity + 1);
+//            } else {
+//                shoppingList.put(product, 1);
+//            }
+//            System.out.println("Aktualna lista zakupów:");
+//            for (String key : shoppingList.keySet()) {
+//                int quantity = shoppingList.get(key);
+//                System.out.println(key + ": " + quantity);
+//            }
+//        }
     }
 }
