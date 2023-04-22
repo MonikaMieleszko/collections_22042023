@@ -1,16 +1,14 @@
 package org.example;
 
 import java.util.Set;
-
 import java.util.HashSet;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args ) {
+public class App {
+    public static void main(String[] args) {
         //  System.out.println( "Hello Judyta!" );
         //  Stwórz dwa HashSety integerów i zaimplementuj dla nich następujące działania rachunków zbiorów: suma, część wspólna, różnica, suma bez części wspólnej. Wynik działania powinien trafić do trzeciego zbioru.
         Set<Integer> numbers1 = new HashSet<>();
@@ -25,12 +23,13 @@ public class App
 
 
         for (int index : numbers1) {
-            for (int index2 : numbers2)
+            for (int index2 : numbers2) {
                 if (index == index2) {
                     System.out.println(index);
                     intersection.add(index);
                     System.out.println(intersection);
                 }
+            }
         }
         Set<Integer> union = new HashSet<>();
         for (int index3 : numbers1) {
@@ -42,62 +41,44 @@ public class App
         System.out.println(union);
 
         Set<Integer> differenceAB = new HashSet<>();
+
         for (int index : numbers1) {
-            differenceAB.add(index);}
-        for (int index : numbers1)
-            for (int index2 : numbers2)
-                if (index == index2) {
-                    System.out.println(index);
-                   differenceAB.remove(index);
-                    System.out.println(differenceAB);
+                if (numbers2.contains (index)) {
                 }
+                    else {
+                    differenceAB.add(index);
+                }
+            }
+        System.out.println(differenceAB);
 
         Set<Integer> differenceBA = new HashSet<>();
-        for (int index : numbers2) {
-            differenceBA.add(index);}
-        for (int index : numbers2)
-            for (int index2 : numbers1)
-                if (index == index2) {
-                 //   System.out.println(index);
-                    differenceBA.remove(index);}
-                    System.out.println(differenceBA);
+
+        for (int index2 : numbers2) {
+            if (numbers1.contains(index2)) {
+            } else {
+                differenceBA.add(index2);
+            }
+        }
+        System.out.println(differenceBA);
 
         Set<Integer> diffSym = new HashSet<>();
-        for (int index3 : differenceAB) {
-            diffSym.add(index3);
-        }
-        for (int index3 : differenceBA) {
-            diffSym.add(index3);
-        }
-        System.out.println(diffSym);
-
-    /*    Set<Integer> unionMinusIntersect = new HashSet<>();
-        // unionMinusIntersect=union;
-        //if(intersection)
-        for (int index4 : numbers1) {
-            unionMinusIntersect.add(index4);
-        }
-
-        for (int index4 : numbers1) {
-            //  unionMinusIntersect.add(index4);
-            for (int index5 : numbers2)
-                if (index4 != index5) {
-                    unionMinusIntersect.add(index5);
+        for (int index : numbers1) {
+           if (numbers2.contains(index)) {
                 } else {
-                    unionMinusIntersect.remove(index4);
+                    diffSym.add(index);
                 }
-            //   System.out.println(index4);
-            //  union.remove(index4);
+            }
+        for (int index2 : numbers2) {
+            if (numbers1.contains(index2)) {
+            } else {
+                diffSym.add(index2);
+            }
+        }
+            System.out.println(diffSym);
 
-        }System.out.println(unionMinusIntersect);*/
-
-       // System.out.println(union.remove(intersection));
-       // System.out.println(union);
-
-      //  names.add("Mateusz");
-
-
-       // Stwórz dwie HashMapy<String, Integer> (jak w liście zakupów) i zaimplementuj ich sumowanie. Np jedna mapa to Jajka: 3; Mleko: 1, a druga to Jajka: 2; Kiełbasa: 2, wynik to Jajka: 5; Mleko: 1; Kiełbasa: 2
+        // Task 3 - Stwórz dwie HashMapy<String, Integer> (jak w liście zakupów)
+        //i zaimplementuj ich sumowanie. Np jedna mapa to Jajka: 3; Mleko: 1,
+        // a druga to Jajka: 2; Kiełbasa: 2, wynik to Jajka: 5; Mleko: 1; Kiełbasa: 2
 
     }
 }
